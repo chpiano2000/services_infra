@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: robin-static
+  labels:
+    app: robin-static
+  namespace: dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: robin-static
+  template:
+    metadata:
+      labels:
+        app: robin-static
+      namespace: dev
+    spec:
+      containers:
+        - name: robin-static
+          image: vochidat0/static_website:v0.0.4
+          ports:
+            - containerPort: 80

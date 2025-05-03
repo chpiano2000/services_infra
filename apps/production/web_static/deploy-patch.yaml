@@ -1,0 +1,9 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: robin-static
+  labels:
+    app: robin-static
+  namespace: dev
+spec:
+  replicas: 2
